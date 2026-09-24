@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>English Basics — Part 3</title>
+<style>
+  :root{
+    --ink:#20261f; --paper:#faf7ef; --line:#d8d0bd; --accent:#3d6b4f; --accent-ink:#f2efe2;
+    --wrong:#a4432f; --right:#3d6b4f; --card:#ffffff;
+    box-sizing:border-box;
+    padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ink:#eae6d9; --paper:#181a16; --line:#3a3d33; --accent:#7fb894; --accent-ink:#0e1210;
+      --wrong:#e08069; --right:#7fb894; --card:#20241d;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ink:#eae6d9; --paper:#181a16; --line:#3a3d33; --accent:#7fb894; --accent-ink:#0e1210;
+    --wrong:#e08069; --right:#7fb894; --card:#20241d;
+  }
+  *{box-sizing:border-box}
+  html{scroll-padding-top:calc(64px + env(safe-area-inset-top,0px));}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:Georgia,'Iowan Old Style',serif;line-height:1.5;}
+  header{position:sticky;top:0;padding-top:env(safe-area-inset-top,0px);background:var(--paper);border-bottom:1px solid var(--line);z-index:10;}
+  .head-inner{max-width:760px;margin:0 auto;padding:14px 20px;}
+  header h1{font-size:1.15rem;margin:0 0 8px;font-weight:700;}
+  nav{display:flex;flex-wrap:wrap;gap:6px;overflow-x:auto;}
+  nav a{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:.72rem;color:var(--ink);text-decoration:none;border:1px solid var(--line);padding:5px 10px;border-radius:20px;white-space:nowrap;opacity:.8;}
+  nav a:hover{opacity:1;border-color:var(--accent);}
+  main{max-width:760px;margin:0 auto;padding:28px 20px 80px;}
+  .intro{margin-bottom:36px;}
+  .intro h2{font-size:1.6rem;margin:0 0 10px;}
+  .intro p{max-width:62ch;}
+  .intro .focus{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:14px 18px;margin-top:16px;font-size:.92rem;}
+  .intro .focus strong{display:block;margin-bottom:6px;}
+  section.unit{margin:52px 0;padding-top:12px;border-top:1px solid var(--line);}
+  section.unit h2{font-size:1.35rem;margin:0 0 6px;}
+  .purpose{font-size:.95rem;opacity:.85;max-width:62ch;margin:0 0 10px;}
+  .focus-line{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:.82rem;background:var(--card);border-left:3px solid var(--accent);padding:8px 12px;margin-bottom:18px;max-width:62ch;}
+  .ref{font-size:.9rem;margin-bottom:18px;max-width:62ch;}
+  .ref table{border-collapse:collapse;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:.85rem;}
+  .ref td{padding:3px 12px 3px 0;}
+  .passage{font-style:italic;max-width:62ch;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:16px 18px;margin-bottom:18px;font-size:1.02rem;}
+  .task{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:14px 16px;margin-bottom:12px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;}
+  .task .q{font-size:.95rem;margin-bottom:10px;}
+  .task .opts{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px;}
+  .task .opts button{font-family:inherit;font-size:.85rem;padding:6px 12px;border-radius:6px;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer;}
+  .task .opts button:hover{border-color:var(--accent);}
+  .task input[type=text]{font-family:inherit;font-size:.85rem;padding:6px 10px;border-radius:6px;border:1px solid var(--line);background:var(--paper);color:var(--ink);width:180px;margin-right:8px;}
+  .task .check{font-family:inherit;font-size:.8rem;padding:6px 12px;border-radius:6px;border:1px solid var(--accent);background:var(--accent);color:var(--accent-ink);cursor:pointer;}
+  .fb{display:inline-block;margin-left:8px;font-size:.82rem;min-height:1.2em;}
+  .fb.correct{color:var(--right);}
+  .fb.wrong{color:var(--wrong);}
+  .progress{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:.75rem;opacity:.7;margin-top:2px;}
+  .totalscore{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:1.05rem;font-weight:700;text-align:center;margin-top:40px;border-top:1px solid var(--line);padding-top:20px;}
+  footer{max-width:760px;margin:0 auto;padding:0 20px 60px;font-size:1.2rem;opacity:.8;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="head-inner">
+    <h1>English Basics — Part 3</h1>
+    <nav id="topnav"></nav>
+  </div>
+</header>
+
+<main>
+  <div class="intro">
+    <h2>Your day, your world</h2>
+    <p>Part 3 moves into talking about everyday life: the rooms you haven't covered yet, the calendar and weather, how you spend your free time, your routine, how you feel, what people do for work, bigger numbers, and introducing yourself properly.</p>
+    <div class="focus">
+      <strong>What to focus on:</strong>
+      Several tasks here ask you to reason a little, not just recall a word (e.g. "how do you feel before a trip?"). Read the whole question, picture the situation, then answer — that's closer to how you'll actually use English in conversation.
+    </div>
+  </div>
+
+  <div id="units"></div>
+
+  <div id="totalscore" class="totalscore">Score: 0 / 0 correct</div>
+</main>
+
+<footer>Nannestad videregående skole — Barbara Anna Zielonka</footer>
+
+<script>
+const UNITS = [
+{
+  id:"q1", title:"1. Bedroom",
+  purpose:"Your bedroom is where your morning and evening routine happens — useful vocabulary for describing your home.",
+  focus:"Focus on matching each object to when you use it: some are for sleeping, some for waking up.",
+  ref:`bed, pillow, blanket, wardrobe/closet, lamp, alarm clock, mirror, drawer, curtains`,
+  tasks:[
+    {type:"fill", q:"You sleep under this to stay warm at night:", answer:"blanket"},
+    {type:"mcq", q:"What wakes you up in the morning?", options:["an alarm clock","a wardrobe","a pillow"], correct:"an alarm clock"},
+    {type:"fill", q:"You keep your clothes hanging in a ___.", answer:"wardrobe"},
+    {type:"mcq", q:"What do you rest your head on when you sleep?", options:["a pillow","a drawer","a lamp"], correct:"a pillow"}
+  ]
+},
+{
+  id:"q2", title:"2. Kitchen",
+  purpose:"The kitchen has some of the most-used objects in the whole house.",
+  focus:"Focus on which appliance does what — several of these look similar but do different jobs.",
+  ref:`fridge, oven, stove/cooker, sink, microwave, kettle, cupboard, plate, pan`,
+  tasks:[
+    {type:"fill", q:"You keep milk cold in the ___.", answer:"fridge"},
+    {type:"mcq", q:"What do you use to boil water quickly for tea?", options:["a kettle","an oven","a fridge"], correct:"a kettle"},
+    {type:"fill", q:"You bake a cake in the ___.", answer:"oven"},
+    {type:"mcq", q:"Where do you wash the dishes?", options:["the sink","the cupboard","the microwave"], correct:"the sink"}
+  ]
+},
+{
+  id:"q3", title:"3. Months",
+  purpose:"You need the months for birthdays, holidays, and making plans.",
+  focus:"Focus on the order of the months and which season each one belongs to in your part of the world.",
+  ref:`January, February, March, April, May, June, July, August, September, October, November, December`,
+  tasks:[
+    {type:"fill", q:"The first month of the year is ___.", answer:"January"},
+    {type:"fill", q:"The last month of the year is ___.", answer:"December"},
+    {type:"mcq", q:"Which month has Valentine's Day?", options:["February","March","May"], correct:"February"},
+    {type:"fill", q:"Norwegian summer usually includes June, July, and ___.", answer:"August"}
+  ]
+},
+{
+  id:"q4", title:"4. Weather",
+  purpose:"Weather is one of the most common small-talk topics in English.",
+  focus:"Focus on connecting the adjective to a real picture of that weather, not just the translation.",
+  ref:`sunny, rainy, cloudy, windy, snowy, cold, hot, foggy — \"It is sunny today.\"`,
+  tasks:[
+    {type:"fill", q:"When there's a lot of rain, it is ___.", answer:"rainy"},
+    {type:"mcq", q:"What's the weather like at -5°C with snow?", options:["snowy and cold","sunny and hot","windy and warm"], correct:"snowy and cold"},
+    {type:"fill", q:"When the sky is full of clouds, it is ___.", answer:"cloudy"},
+    {type:"mcq", q:"Which word describes strong, moving air?", options:["windy","foggy","sunny"], correct:"windy"}
+  ]
+},
+{
+  id:"q5", title:"5. Spare time — on Mondays, on Sundays",
+  purpose:"Talking about your weekly routine and free time needs the right preposition before the day.",
+  focus:"Focus on the rule: use 'on' before a specific day, especially with -s for a repeated habit (on Mondays).",
+  ref:`I play football on Mondays. We rest on Sundays. She works on Fridays.
+    <p style="margin:10px 0 0">But months use <b>in</b>, not <i>on</i>: My birthday is <b>in</b> January. We go skiing <b>in</b> December.</p>`,
+  tasks:[
+    {type:"fill", q:"I go to school ___ Mondays.", answer:"on"},
+    {type:"fill", q:"We don't work ___ Sundays.", answer:"on"},
+    {type:"mcq", q:"Which is correct?", options:["I play tennis in Fridays","I play tennis on Fridays"], correct:"I play tennis on Fridays"},
+    {type:"fill", q:"Complete: \"___ Saturdays, I relax at home.\" (one word)", answer:"on"},
+    {type:"fill", q:"My birthday is ___ January. (on/in)", answer:"in"}
+  ]
+},
+{
+  id:"q6", title:"6. Describe your day",
+  purpose:"Being able to describe your daily routine is one of the most practical speaking skills at this level.",
+  focus:"Focus on the order of events and the sequencing words (first, then, after that, finally).",
+  ref:`wake up → get up → have breakfast → go to school/work → come home → have dinner → go to bed`,
+  tasks:[
+    {type:"fill", q:"I ___ (wake) up at seven o'clock.", answer:"wake"},
+    {type:"mcq", q:"Which comes first in a morning routine?", options:["wake up","have dinner","go to bed"], correct:"wake up"},
+    {type:"fill", q:"After school, I ___ (come) home.", answer:"come"},
+    {type:"mcq", q:"Which word means \"in the end\"?", options:["finally","first","then"], correct:"finally"}
+  ]
+},
+{
+  id:"q7", title:"7. Feelings",
+  purpose:"Talking about how you feel makes your English sound natural and lets people understand you better.",
+  focus:"Focus on the situation each feeling connects to — that's how you'll remember these words.",
+  ref:`happy, sad, tired, angry, excited, scared, bored, hungry`,
+  tasks:[
+    {type:"fill", q:"When you don't get enough sleep, you feel ___.", answer:"tired"},
+    {type:"mcq", q:"How do you usually feel before a fun trip?", options:["excited","bored","angry"], correct:"excited"},
+    {type:"fill", q:"When you want to eat, you feel ___.", answer:"hungry"},
+    {type:"mcq", q:"Which feeling is the opposite of happy?", options:["sad","tired","hungry"], correct:"sad"}
+  ]
+},
+{
+  id:"q8", title:"8. Jobs",
+  purpose:"Talking about jobs — yours and other people's — comes up in almost every conversation about life.",
+  focus:"Focus on matching the job to what that person actually does, not just the word's translation.",
+  ref:`teacher, doctor, nurse, police officer, engineer, chef, farmer, driver, dentist`,
+  tasks:[
+    {type:"fill", q:"A person who teaches students is a ___.", answer:"teacher"},
+    {type:"mcq", q:"Who helps sick people in a hospital?", options:["a doctor","a farmer","a driver"], correct:"a doctor"},
+    {type:"fill", q:"A person who cooks food in a restaurant is a ___.", answer:"chef"},
+    {type:"mcq", q:"Who checks and fixes your teeth?", options:["a dentist","an engineer","a police officer"], correct:"a dentist"}
+  ]
+},
+{
+  id:"q9", title:"9. Numbers 13–99",
+  purpose:"Beyond twenty, prices, ages, and addresses all need these bigger numbers.",
+  focus:"Focus on the hyphen in compound numbers (twenty-one, forty-five) — it's easy to forget in writing.",
+  ref:`13 thirteen ... 19 nineteen · 20 twenty, 30 thirty ... 90 ninety · 21 twenty-one · 99 ninety-nine`,
+  tasks:[
+    {type:"fill", q:"Write 21 in words.", answer:"twenty-one"},
+    {type:"fill", q:"Write 99 in words.", answer:"ninety-nine"},
+    {type:"fill", q:"Write 45 in words.", answer:"forty-five"},
+    {type:"mcq", q:"Which number is \"seventy-six\"?", options:["76","67","77"], correct:"76"}
+  ]
+},
+{
+  id:"q10", title:"10. Personal information",
+  purpose:"These are the exact questions you'll be asked the first time you meet someone or fill in a form.",
+  focus:"Focus on the question word each piece of information needs — name and age don't use the same one.",
+  ref:`What's your name? How old are you? Where do you live? What's your phone number?`,
+  tasks:[
+    {type:"fill", q:"___ is your name? (question word)", answer:"what"},
+    {type:"fill", q:"How ___ are you? (asking about age)", answer:"old"},
+    {type:"mcq", q:"Which question asks where you live?", options:["Where do you live?","What do you do?","How are you?"], correct:"Where do you live?"},
+    {type:"fill", q:"What's your phone ___?", answer:"number"}
+  ]
+}
+];
+
+const READING = [
+{
+  id:"rr1", title:"11. Reading: Emma's Morning",
+  purpose:"A short text combining bedroom words, weather, feelings, and jobs.",
+  focus:"Read once for the general picture, then check each detail carefully.",
+  passage:`"Emma wakes up at seven o'clock. Her alarm clock rings loudly next to her bed. She looks out the window — it is cold and cloudy today. Emma feels tired, so she has a big breakfast before she gets dressed. She is a nurse, and she works on Mondays, Wednesdays, and Fridays."`,
+  tasks:[
+    {type:"mcq", q:"What time does Emma wake up?", options:["six o'clock","seven o'clock","eight o'clock"], correct:"seven o'clock"},
+    {type:"mcq", q:"What is the weather like?", options:["hot and sunny","cold and cloudy","rainy and windy"], correct:"cold and cloudy"},
+    {type:"mcq", q:"How does Emma feel when she wakes up?", options:["excited","tired","hungry"], correct:"tired"},
+    {type:"mcq", q:"What is Emma's job?", options:["teacher","nurse","chef"], correct:"nurse"}
+  ]
+},
+{
+  id:"rr2", title:"12. Reading: The Kitchen at Grandma's House",
+  purpose:"A short text combining kitchen words, months, and bigger numbers.",
+  focus:"Watch for numbers written as words — match them carefully to the digits in the questions.",
+  passage:`"Every August, our family visits Grandma. Her kitchen is small but full of good smells. She keeps forty-two cookbooks in the cupboard, and she always makes soup in a big pan on the stove. Grandma is seventy-nine years old, but she still cooks every day. Her birthday is in November."`,
+  tasks:[
+    {type:"mcq", q:"Which month does the family visit Grandma?", options:["July","August","September"], correct:"August"},
+    {type:"mcq", q:"How many cookbooks does Grandma have?", options:["fourteen","forty-two","twenty-four"], correct:"forty-two"},
+    {type:"mcq", q:"Where does Grandma make soup?", options:["in the fridge","on the stove","in the oven"], correct:"on the stove"},
+    {type:"mcq", q:"When is Grandma's birthday?", options:["November","December","October"], correct:"November"}
+  ]
+},
+{
+  id:"rr3", title:"13. Reading: Tom's Free Time",
+  purpose:"A short text combining jobs, spare time on specific days, and feelings.",
+  focus:"Notice which day goes with which activity and feeling — Saturday and Sunday are different here.",
+  passage:`"Tom is an engineer. He works hard from Monday to Friday. On Saturdays, he plays football with his friends, and he feels happy and excited. On Sundays, he rests at home and reads books — he feels calm and relaxed. Tom says weekends are his favourite part of the week."`,
+  tasks:[
+    {type:"mcq", q:"What is Tom's job?", options:["farmer","engineer","dentist"], correct:"engineer"},
+    {type:"mcq", q:"What does Tom do on Saturdays?", options:["reads books","plays football","works"], correct:"plays football"},
+    {type:"mcq", q:"How does Tom feel on Saturdays?", options:["tired and bored","happy and excited","sad and angry"], correct:"happy and excited"},
+    {type:"mcq", q:"What does Tom do on Sundays?", options:["plays football","works","rests and reads books"], correct:"rests and reads books"}
+  ]
+},
+{
+  id:"rr4", title:"14. Reading: A New Student",
+  purpose:"A short text combining personal information, numbers, feelings, and bedroom words.",
+  focus:"This text introduces a person the way you might introduce yourself — notice the pattern.",
+  passage:`"Hello, my name is Lukas. I am sixteen years old, and I live in Nannestad. My bedroom has a big window, a small desk, and a blue blanket on my bed. My favourite subject is English, and I am excited to start this new school."`,
+  tasks:[
+    {type:"mcq", q:"How old is Lukas?", options:["sixteen","sixty","six"], correct:"sixteen"},
+    {type:"mcq", q:"Where does Lukas live?", options:["Oslo","Nannestad","Bergen"], correct:"Nannestad"},
+    {type:"mcq", q:"What colour is Lukas's blanket?", options:["red","blue","green"], correct:"blue"},
+    {type:"mcq", q:"How does Lukas feel about starting school?", options:["bored","excited","scared"], correct:"excited"}
+  ]
+}
+];
+
+UNITS.push(...READING);
+
+const unitsEl = document.getElementById("units");
+const navEl = document.getElementById("topnav");
+
+UNITS.forEach((u) => {
+  const a = document.createElement("a");
+  a.href = "#" + u.id;
+  a.textContent = u.title.replace(/^\d+\.\s*/, "");
+  navEl.appendChild(a);
+
+  const sec = document.createElement("section");
+  sec.className = "unit";
+  sec.id = u.id;
+
+  let tasksHtml = "";
+  u.tasks.forEach((t, ti) => {
+    const tid = u.id + "-t" + ti;
+    if (t.type === "mcq") {
+      const opts = t.options.map(o =>
+        `<button type="button" onclick="answerMcq('${tid}','${escAttr(o)}','${escAttr(t.correct)}')">${o}</button>`
+      ).join("");
+      tasksHtml += `<div class="task"><div class="q">${ti+1}. ${t.q}</div>
+        <div class="opts">${opts}</div><span class="fb" id="${tid}-fb"></span></div>`;
+    } else {
+      tasksHtml += `<div class="task"><div class="q">${ti+1}. ${t.q}</div>
+        <input type="text" id="${tid}-in" placeholder="type your answer">
+        <button type="button" class="check" onclick="answerFill('${tid}','${escAttr(t.answer)}')">Check</button>
+        <span class="fb" id="${tid}-fb"></span></div>`;
+    }
+  });
+
+  sec.innerHTML = `
+    <h2>${u.title}</h2>
+    <p class="purpose">${u.purpose}</p>
+    <div class="focus-line"><strong>Focus:</strong> ${u.focus}</div>
+    ${u.passage ? `<div class="passage">${u.passage}</div>` : ""}
+    ${u.ref ? `<div class="ref">${u.ref}</div>` : ""}
+    ${tasksHtml}
+    <div class="progress" id="${u.id}-progress">0 / ${u.tasks.length} correct</div>
+  `;
+  unitsEl.appendChild(sec);
+});
+
+const state = {};
+const TOTAL_TASKS = UNITS.reduce((sum, u) => sum + u.tasks.length, 0);
+document.getElementById("totalscore").textContent = "Score: 0 / " + TOTAL_TASKS + " correct";
+
+function escAttr(s){ return String(s).replace(/'/g,"\\'"); }
+
+function updateTotalScore(){
+  const correctCount = Object.values(state).filter(Boolean).length;
+  document.getElementById("totalscore").textContent = "Score: " + correctCount + " / " + TOTAL_TASKS + " correct";
+}
+
+function markDone(tid, ok){
+  if(!state[tid]) {
+    state[tid] = ok;
+    const unitId = tid.split("-t")[0];
+    const doneCount = Object.keys(state).filter(k => k.startsWith(unitId+"-") && state[k]).length;
+    const total = UNITS.find(u=>u.id===unitId).tasks.length;
+    document.getElementById(unitId+"-progress").textContent = doneCount + " / " + total + " correct";
+    updateTotalScore();
+  }
+}
+
+function answerMcq(tid, chosen, correct){
+  const fb = document.getElementById(tid+"-fb");
+  const ok = chosen === correct;
+  fb.textContent = ok ? "Correct" : ("Not quite — answer: " + correct);
+  fb.className = "fb " + (ok ? "correct" : "wrong");
+  if(ok) markDone(tid, true);
+}
+
+function answerFill(tid, correct){
+  const input = document.getElementById(tid+"-in");
+  const fb = document.getElementById(tid+"-fb");
+  const val = input.value.trim().toLowerCase();
+  const ok = val === correct.toLowerCase();
+  fb.textContent = ok ? "Correct" : ("Not quite — answer: " + correct);
+  fb.className = "fb " + (ok ? "correct" : "wrong");
+  if(ok) markDone(tid, true);
+}
+</script>
+</body>
+</html>
